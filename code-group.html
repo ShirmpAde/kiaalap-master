@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Basic Form Element | Kiaalap - Kiaalap Admin Template</title>
+    <title>Data Table | Kiaalap - Kiaalap Admin Template</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon
@@ -53,12 +53,16 @@
 		============================================ -->
     <link rel="stylesheet" href="css/calendar/fullcalendar.min.css">
     <link rel="stylesheet" href="css/calendar/fullcalendar.print.min.css">
-    <!-- modals CSS
+    <!-- x-editor CSS
 		============================================ -->
-    <link rel="stylesheet" href="css/modals.css">
-    <!-- forms CSS
+    <link rel="stylesheet" href="css/editor/select2.css">
+    <link rel="stylesheet" href="css/editor/datetimepicker.css">
+    <link rel="stylesheet" href="css/editor/bootstrap-editable.css">
+    <link rel="stylesheet" href="css/editor/x-editor-style.css">
+    <!-- normalize CSS
 		============================================ -->
-    <link rel="stylesheet" href="css/form/all-type-forms.css">
+    <link rel="stylesheet" href="css/data-table/bootstrap-table.css">
+    <link rel="stylesheet" href="css/data-table/bootstrap-editable.css">
     <!-- style CSS
 		============================================ -->
     <link rel="stylesheet" href="style.css">
@@ -68,6 +72,20 @@
     <!-- modernizr JS
 		============================================ -->
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <style>
+    .button-container {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .button-group {
+        display: flex;
+    }
+    
+    .btn {
+        margin: 0 5px; /* 버튼 간 간격 조정 */
+    }
+    </style>
 </head>
 
 <body>
@@ -177,15 +195,15 @@
                                 <li><a title="Peity Charts" href="peity.html"><span class="mini-sub-pro">Peity Charts</span></a></li>
                             </ul>
                         </li>
-                        <li>
+                        <li class="active">
                             <a class="has-arrow" href="mailbox.html" aria-expanded="false"><span class="educate-icon educate-data-table icon-wrap"></span> <span class="mini-click-non">Data Tables</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
                                 <li><a title="Peity Charts" href="static-table.html"><span class="mini-sub-pro">Static Table</span></a></li>
                                 <li><a title="Data Table" href="data-table.html"><span class="mini-sub-pro">Data Table</span></a></li>
                             </ul>
                         </li>
-                        <li class="active">
-                            <a class="has-arrow" href="mailbox.html" aria-expanded="false"><span class="educate-icon educate-form icon-wrap"></span> <span class="mini-click-non">Forms</span></a>
+                        <li>
+                            <a class="has-arrow" href="mailbox.html" aria-expanded="false"><span class="educate-icon educate-form icon-wrap"></span> <span class="mini-click-non">Forms Elements</span></a>
                             <ul class="submenu-angle form-mini-nb-dp" aria-expanded="false">
                                 <li><a title="Basic Form Elements" href="admin-Form.html"><span class="mini-sub-pro">Admin Form</span></a></li>
                                 <li><a title="Basic Form Elements" href="basic-form-element.html"><span class="mini-sub-pro">Bc Form Elements</span></a></li>
@@ -1065,7 +1083,7 @@
                                         <ul class="breadcome-menu">
                                             <li><a href="#">Home</a> <span class="bread-slash">/</span>
                                             </li>
-                                            <li><span class="bread-blod">Basic Element</span>
+                                            <li><span class="bread-blod">Data Table</span>
                                             </li>
                                         </ul>
                                     </div>
@@ -1076,123 +1094,377 @@
                 </div>
             </div>
         </div>
-        <!-- Basic Form Start -->
-        <div class="basic-form-area mg-b-15">
+        <!-- Static Table Start -->
+        <div class="data-table-area mg-b-15">
             <div class="container-fluid">
-                <div class="row">                                    
+                <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <div class="sparkline12-list">
-                            <div class="sparkline12-hd">
-                                <div class="main-sparkline12-hd">
-                                    <h1>Code</h1>
+                        <div class="sparkline13-list">
+                            <div class="sparkline13-hd">
+                                <div class="main-sparkline13-hd">
+                                    <h1>Code Group</h1>
                                 </div>
                             </div>
-                            <div class="sparkline12-graph">
-                                <div class="basic-login-form-ad">
-                                    <div class="row">
-                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                            <div class="all-form-element-inner">
-                                                <form action="#">
-                                                    <div class="form-group-inner">
-                                                        <div class="row">
-                                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                                                <label class="login2 pull-right pull-right-pro">코드그룹</label>
-                                                            </div>
-                                                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <div class="form-select-list">
-                                                                    <select class="form-control custom-select-value" name="account">
-																			<option>Select 1</option>
-																			<option>Select 2</option>
-																			<option>Select 3</option>
-																			<option>Select 4</option>
-																		</select>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                            <div class="sparkline13-graph">
+                                <div class="datatable-dashv1-list custom-datatable-overright">
+                                    <form class="row g-3 needs-validation" novalidate>
+                                        <div class="form-group-inner">
+                                            <div class="row align-items-center gap-3">
+                                                <div class="col-md-2 px-3">
+                                                    <div class="form-select-list">
+                                                        <select class="form-control custom-select-value" name="account" style="margin-bottom: 10px;">
+                                                            <option>N</option>
+                                                            <option>Y</option>
+                                                        </select>
                                                     </div>
-                                                    <div class="form-group-inner">
-                                                        <div class="row">
-                                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                                                <label class="login2 pull-right pull-right-pro">코드</label>
-                                                            </div>
-                                                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <div class="row">
-                                                                    <div class="col-lg-3 col-md-3 col-sm-6">
-                                                                        <input type="text" disabled class="form-control" placeholder="자동생성" />
-                                                                    </div>
-                                                                    <div class="col-lg-3 col-md-3 col-sm-6">
-                                                                        <input type="text" class="form-control" placeholder="코드(ANOTHER)" />
-                                                                    </div>
-                                                                    <div class="col-lg-3 col-md-3 col-sm-6">
-                                                                        <input type="text" class="form-control" placeholder="코드 이름" />
-                                                                    </div>
-                                                                    <div class="col-lg-3 col-md-3 col-sm-6">
-                                                                        <input type="text" class="form-control" placeholder="코드 이름(영문)" />
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>                                                                                                                                                                                  
-                                                    <div class="form-group-inner">
-                                                        <div class="row">
-                                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                                                <label class="login2 pull-right pull-right-pro">사용여부</label>
-                                                            </div>
-                                                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <div class="row">
-                                                                    <div class="col-lg-6 col-md-6 col-sm-6">
-                                                                        <div class="form-select-list">
-                                                                            <select class="form-control custom-select-value" name="account">
-                                                                                <option>사용</option>
-                                                                                <option>미사용</option>
-                                                                            </select>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-lg-6 col-md-6 col-sm-6">
-                                                                        <input type="text" class="form-control" placeholder="순서" />
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                                </div>
+                                                <div class="col-md-2 px-3">
+                                                    <div class="form-select-list">
+                                                        <select class="form-control custom-select-value" name="account" style="margin-bottom: 10px;">
+                                                            <option>Y</option>
+                                                            <option>N</option>
+                                                        </select>
                                                     </div>
-                                                    <div class="form-group-inner">
-                                                        <div class="row">
-                                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                                                <label class="login2 pull-right pull-right-pro">설명</label>
-                                                            </div>
-                                                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <div class="row">
-                                                                    <div class="form-section col-md-6">                                                                      
-                                                                        <textarea class="form-control" id="floatingTextarea2" style="height: 100px"></textarea>        
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
-                                                    <div class="form-group-inner">
-                                                        <div class="login-btn-inner">
-                                                            <div class="row">
-                                                                <div class="col-lg-3"></div>
-                                                                <div class="col-lg-9">
-                                                                    <div class="login-horizental cancel-wp pull-left form-bc-ele">
-                                                                        <button class="btn btn-white" type="submit">Cancel</button>
-                                                                        <button class="btn btn-sm btn-primary login-submit-cs" type="submit">Save Change</button>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>                                                    
-                                                </form>
+                                                </div>
+                                                <div class="col-md-2 px-3">
+                                                    <div class="form-select-list">
+                                                        <select class="form-control custom-select-value" name="account" style="margin-bottom: 10px;">
+                                                            <option>날짜</option>
+                                                            <option>등록일</option>
+                                                            <option>수정일</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 px-3">
+                                                    <input type="text" class="form-control" id="validationCustom02" value="2025-01-05" required style="margin-bottom: 10px;">
+                                                </div>
+                                                <div class="col-md-3 px-3">
+                                                    <input type="text" class="form-control" id="validationCustom03" value="2025-02-04" required style="margin-bottom: 10px;">
+                                                </div>
+                                                <div class="col-md-2 px-3">
+                                                    <div class="form-select-list">
+                                                        <select class="form-control custom-select-value" name="account" style="margin-bottom: 10px;">
+                                                            <option>검색구분</option>
+                                                            <option>코드그룹</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2 px-3">
+                                                    <input type="text" class="form-control" id="validationCustom02" value="검색어" required style="margin-bottom: 10px;">
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <button class="btn btn-primary" type="button">
+                                                        <img src="./img/search.svg" alt="이미지 설명" style="width: 20px; height: 20px;">            
+                                                    </button>
+                                                    <button class="btn btn-primary" type="button">
+                                                        <img src="./img/rotate-cw.svg" alt="이미지 설명" style="width: 20px; height: 20px;">            
+                                                    </button>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <h4>Total:42</h4>                            
+                                    <table id="table" data-toggle="table" data-pagination="true" data-resizable="true" data-cookie="true"
+                                        data-cookie-id-table="saveId" data-click-to-select="true" data-toolbar="#toolbar">
+                                        <thead>
+                                            <tr>
+                                                <th data-field="state" data-checkbox="true"></th>
+                                                <th data-field="id">#</th>
+                                                <th data-field="name" data-editable="true">사용</th>
+                                                <th data-field="email" data-editable="true">코드그룹 코드</th>
+                                                <th data-field="phone" data-editable="true">코드그룹 이름</th>
+                                                <th data-field="complete">코드그룹 이름(영문)</th>
+                                                <th data-field="task" data-editable="true">갯수</th>
+                                                <th data-field="date" data-editable="true">순서</th>
+                                                <th data-field="price">등록일</th>
+                                                <th data-field="action">수정일</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td></td>
+                                                <td>42</td>
+                                                <td>Y</td>
+                                                <td>42</td>
+                                                <td>작품.기타사이드유형</td>
+                                                <td></td>                                                
+                                                <td>8</td>
+                                                <td>1</td>
+                                                <td></td>
+                                                <td></td>                                                
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>41</td>
+                                                <td>Y</td>
+                                                <td>42</td>
+                                                <td>작품.연재사이트</td>
+                                                <td></td>                                                
+                                                <td>8</td>
+                                                <td>1</td>
+                                                <td></td>
+                                                <td></td>                                                
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>40</td>
+                                                <td>Y</td>
+                                                <td>40</td>
+                                                <td>결제.구매자거래상태</td>
+                                                <td></td>                                                
+                                                <td>9</td>
+                                                <td>1</td>
+                                                <td></td>
+                                                <td></td>                                                
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>39</td>
+                                                <td>Y</td>
+                                                <td>39</td>
+                                                <td>결제.판매자거래상태</td>
+                                                <td></td>                                                
+                                                <td>10</td>
+                                                <td>1</td>
+                                                <td></td>
+                                                <td></td>                                                
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>38</td>
+                                                <td>Y</td>
+                                                <td>38</td>
+                                                <td>결제.승인상태</td>
+                                                <td></td>                                                
+                                                <td>7</td>
+                                                <td>1</td>
+                                                <td></td>
+                                                <td></td>                                                
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>37</td>
+                                                <td>Y</td>
+                                                <td>37</td>
+                                                <td>작품.기타사이드유형</td>
+                                                <td></td>                                                
+                                                <td>8</td>
+                                                <td>1</td>
+                                                <td></td>
+                                                <td></td>                                                
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>36</td>
+                                                <td>Y</td>
+                                                <td>36</td>
+                                                <td>작품.연재사이트</td>
+                                                <td></td>                                                
+                                                <td>8</td>
+                                                <td>1</td>
+                                                <td></td>
+                                                <td></td>                                                
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>35</td>
+                                                <td>Y</td>
+                                                <td>35</td>
+                                                <td>결제.구매자거래상태</td>
+                                                <td></td>                                                
+                                                <td>9</td>
+                                                <td>1</td>
+                                                <td></td>
+                                                <td></td>                                                
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>34</td>
+                                                <td>Y</td>
+                                                <td>34</td>
+                                                <td>결제.판매자거래상태</td>
+                                                <td></td>                                                
+                                                <td>10</td>
+                                                <td>1</td>
+                                                <td></td>
+                                                <td></td>                                                
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>33</td>
+                                                <td>Y</td>
+                                                <td>33</td>
+                                                <td>결제.승인상태</td>
+                                                <td></td>                                                
+                                                <td>7</td>
+                                                <td>1</td>
+                                                <td></td>
+                                                <td></td>                                                
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>32</td>
+                                                <td>Y</td>
+                                                <td>32</td>
+                                                <td>작품.기타사이드유형</td>
+                                                <td></td>                                                
+                                                <td>8</td>
+                                                <td>1</td>
+                                                <td></td>
+                                                <td></td>                                                
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>31</td>
+                                                <td>Y</td>
+                                                <td>31</td>
+                                                <td>작품.연재사이트</td>
+                                                <td></td>                                                
+                                                <td>8</td>
+                                                <td>1</td>
+                                                <td></td>
+                                                <td></td>                                                
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>30</td>
+                                                <td>Y</td>
+                                                <td>30</td>
+                                                <td>결제.구매자거래상태</td>
+                                                <td></td>                                                
+                                                <td>9</td>
+                                                <td>1</td>
+                                                <td></td>
+                                                <td></td>                                                
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>29</td>
+                                                <td>Y</td>
+                                                <td>29</td>
+                                                <td>결제.판매자거래상태</td>
+                                                <td></td>                                                
+                                                <td>10</td>
+                                                <td>1</td>
+                                                <td></td>
+                                                <td></td>                                                
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>28</td>
+                                                <td>Y</td>
+                                                <td>28</td>
+                                                <td>결제.승인상태</td>
+                                                <td></td>                                                
+                                                <td>7</td>
+                                                <td>1</td>
+                                                <td></td>
+                                                <td></td>                                                
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>27</td>
+                                                <td>Y</td>
+                                                <td>27</td>
+                                                <td>작품.기타사이드유형</td>
+                                                <td></td>                                                
+                                                <td>8</td>
+                                                <td>1</td>
+                                                <td></td>
+                                                <td></td>                                                
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>26</td>
+                                                <td>Y</td>
+                                                <td>26</td>
+                                                <td>작품.연재사이트</td>
+                                                <td></td>                                                
+                                                <td>8</td>
+                                                <td>1</td>
+                                                <td></td>
+                                                <td></td>                                                
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>25</td>
+                                                <td>Y</td>
+                                                <td>25</td>
+                                                <td>결제.구매자거래상태</td>
+                                                <td></td>                                                
+                                                <td>9</td>
+                                                <td>1</td>
+                                                <td></td>
+                                                <td></td>                                                
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>24</td>
+                                                <td>Y</td>
+                                                <td>24</td>
+                                                <td>결제.판매자거래상태</td>
+                                                <td></td>                                                
+                                                <td>10</td>
+                                                <td>1</td>
+                                                <td></td>
+                                                <td></td>                                                
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>23</td>
+                                                <td>Y</td>
+                                                <td>23</td>
+                                                <td>결제.승인상태</td>
+                                                <td></td>                                                
+                                                <td>7</td>
+                                                <td>1</td>
+                                                <td></td>
+                                                <td></td>                                                
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>22</td>
+                                                <td>Y</td>
+                                                <td>22</td>
+                                                <td>결제.승인상태</td>
+                                                <td></td>                                                
+                                                <td>7</td>
+                                                <td>1</td>
+                                                <td></td>
+                                                <td></td>                                                
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="button-container">
+                                        <div class="button-group">
+                                            <button class="btn btn-primary" type="button">
+                                                <img src="./img/x.svg" alt="이미지 설명" style="width: 20px; height: 20px;">            
+                                            </button>
+                                            <button class="btn btn-primary" type="button">
+                                                <img src="./img/trash-2.svg" alt="이미지 설명" style="width: 20px; height: 20px;">            
+                                            </button>
+                                        </div>
+                                        <div class="button-group">
+                                            <button class="btn btn-primary" type="button">
+                                                <img src="./img/underline.svg" alt="이미지 설명" style="width: 20px; height: 20px;">            
+                                            </button>
+                                            <button class="btn btn-primary" type="button">
+                                                <img src="./img/x-square.svg" alt="이미지 설명" style="width: 20px; height: 20px;">            
+                                            </button>
+                                            <button class="btn btn-primary" type="button">
+                                                <img src="./img/plus.svg" alt="이미지 설명" style="width: 20px; height: 20px;">            
+                                            </button>
+                                        </div>
+                                    </div>    
                                 </div>
                             </div>
                         </div>
-                    </div>                     
-                </div>                
-            </div>
-        </div>
+                    </div>
+                </div>
+            </div>       
+
     <!-- jquery
 		============================================ -->
     <script src="js/vendor/jquery-1.12.4.min.js"></script>
@@ -1225,13 +1497,32 @@
 		============================================ -->
     <script src="js/metisMenu/metisMenu.min.js"></script>
     <script src="js/metisMenu/metisMenu-active.js"></script>
+    <!-- data table JS
+		============================================ -->
+    <script src="js/data-table/bootstrap-table.js"></script>
+    <script src="js/data-table/tableExport.js"></script>
+    <script src="js/data-table/data-table-active.js"></script>
+    <script src="js/data-table/bootstrap-table-editable.js"></script>
+    <script src="js/data-table/bootstrap-editable.js"></script>
+    <script src="js/data-table/bootstrap-table-resizable.js"></script>
+    <script src="js/data-table/colResizable-1.5.source.js"></script>
+    <script src="js/data-table/bootstrap-table-export.js"></script>
+    <!--  editable JS
+		============================================ -->
+    <script src="js/editable/jquery.mockjax.js"></script>
+    <script src="js/editable/mock-active.js"></script>
+    <script src="js/editable/select2.js"></script>
+    <script src="js/editable/moment.min.js"></script>
+    <script src="js/editable/bootstrap-datetimepicker.js"></script>
+    <script src="js/editable/bootstrap-editable.js"></script>
+    <script src="js/editable/xediable-active.js"></script>
+    <!-- Chart JS
+		============================================ -->
+    <script src="js/chart/jquery.peity.min.js"></script>
+    <script src="js/peity/peity-active.js"></script>
     <!-- tab JS
 		============================================ -->
     <script src="js/tab.js"></script>
-    <!-- icheck JS
-		============================================ -->
-    <script src="js/icheck/icheck.min.js"></script>
-    <script src="js/icheck/icheck-active.js"></script>
     <!-- plugins JS
 		============================================ -->
     <script src="js/plugins.js"></script>
